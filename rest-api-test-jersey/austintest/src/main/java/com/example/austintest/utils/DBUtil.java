@@ -74,6 +74,7 @@ public class DBUtil {
 			psql.executeUpdate();
 
 		} catch (FriendResourcesException e) {
+			LOG.debug(e.getMessage(),e);
 			throw new FriendResourcesException(e.getMessage(), e.getErrorCode());
 		}catch (Exception e) {
 			LOG.error(e.getMessage());
